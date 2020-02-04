@@ -1,4 +1,5 @@
 import numpy as np
+import sys
 
 datos = [('A',1),('B',2),('C',5),('B',4),('E',8),('D',7),('C',8),('F',5),('G',10),('C',5),('H',3)]
 
@@ -28,6 +29,13 @@ resultados = []
 
 for item in index_pos:
   resultados.append(min(tabla[0,hash_codes[index_pos[item]][0]-1], tabla[1,hash_codes[index_pos[item]][1]-1], tabla[2,hash_codes[index_pos[item]][2]-1]))
+  print("Conjunto de: " + str(item))
+  sys.stdout.write(str(tabla[0,hash_codes[index_pos[item]][0]-1]))
+  sys.stdout.write(", ")
+  sys.stdout.write(str(tabla[1,hash_codes[index_pos[item]][1]-1]))
+  sys.stdout.write(", ")
+  sys.stdout.write(str(tabla[2,hash_codes[index_pos[item]][2]-1]))
+  sys.stdout.write("\n")
 
 errores = np.asarray(resultados) - total
 
